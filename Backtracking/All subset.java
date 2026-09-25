@@ -28,3 +28,41 @@ class Solution {
         
     }
 }
+
+
+
+        //  CHOICE TREE DIAGRAM //
+
+
+Start with set: {a, b, c}
+Current Subset: {}
+
+                      +-------------------+
+                      | Start with {}     |
+                      +-------------------+
+                                |
+                                |
+                  +-------------+-------------+
+                  |                           |
+                  |                           |
+          Include a                      Exclude a
+                  |                           |
+                  |                           |
+          Current Subset: {a}          Current Subset: {}
+                  |                           |
+                  |                           |
+          +-------+-------+                   +-------+----------------+
+          |               |                   |                        |
+          |               |                   |                        |
+  Include b          Exclude b            Include b                 Exclude b
+          |               |                   |                        |
+          |               |                   |                        |
+  +-------+-------+   +-----+-----+           +                        +
+  |               |   |           |           |       |                |                   
+Include c  Exclude c Include c  Exclude c  Include c Exclude c    Include c Exclude c
+  |               |      |        |           |            |         |           |
+  |               |      |        |           |            |         |           |
+  +-------+-------+   +-----+-----+        +-------+-------+         +-----+-----+
+  |               |   |           |        |               |         |            |
+  |               |   |           |        |               |         |            |
+{a,b,c}     {a,b}    {a,c}    {a}        {b,c}            {b}       {c}          {}
